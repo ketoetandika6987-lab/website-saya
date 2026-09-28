@@ -1,0 +1,290 @@
+/* ========================================================================
+   EcoTrace — Design Tokens & Base
+   ======================================================================== */
+:root {
+    --forest-950: #0B1F16;
+    --forest-800: #163829;
+    --forest-700: #1F4D36;
+    --moss-600: #3F7D4E;
+    --moss-500: #5B9A5F;
+    --lime-300: #B9E36D;
+    --lime-200: #D3EFA0;
+    --cream-50: #F8F6EF;
+    --cream-100: #F1EDE0;
+    --soil-800: #3A2A1E;
+    --soil-700: #4A3B2A;
+    --ink-900: #1B211D;
+    --ink-600: #4B554E;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink-900);
+    background: var(--cream-50);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, a {
+    transition: all 0.25s ease;
+}
+
+::selection {
+    background: rgba(91, 154, 95, 0.2);
+    color: var(--forest-950);
+}
+
+.font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.03em;
+}
+
+.dashboard-page {
+    position: relative;
+    background:
+        radial-gradient(circle at top left, rgba(185, 227, 109, 0.22), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(91, 154, 95, 0.18), transparent 30%),
+        linear-gradient(180deg, #F8F6EF 0%, #f3f8f0 42%, #edf5eb 100%);
+    overflow-x: hidden;
+}
+
+.dashboard-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(11, 31, 22, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 31, 22, 0.025) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dashboard-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Animasi lama (dipakai di halaman fitur) ===== */
+.animate-fade-in {
+    animation: fadeIn 0.35s cubic-bezier(0.20, 1, 0.5, 1) forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-14px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-float {
+    animation: float 3.4s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== Bottom Navigation (halaman fitur) ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 28rem;
+}
+.bottom-nav-item.active { color: #16a34a; font-weight: 700; }
+
+.progress-track { background-color: #dcfce7; border-radius: 9999px; overflow: hidden; }
+.progress-fill { background-color: #16a34a; height: 100%; border-radius: 9999px; transition: width 0.4s ease-in-out; }
+
+/* ========================================================================
+   Landing Page
+   ======================================================================== */
+
+/* Hero glow behind logo */
+.hero-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 72% 42%, rgba(185, 227, 109, 0.22), transparent 55%),
+        radial-gradient(circle at 20% 80%, rgba(63, 125, 78, 0.35), transparent 50%);
+    pointer-events: none;
+}
+
+.hero-orb {
+    position: relative;
+    filter: drop-shadow(0 30px 45px rgba(11, 31, 22, 0.22));
+}
+.hero-orb::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(185,227,109,0.38), rgba(185,227,109,0) 72%);
+    filter: blur(18px);
+    z-index: 0;
+}
+.hero-orb::after {
+    content: "";
+    position: absolute;
+    inset: 8%;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 1;
+}
+
+/* Marquee ticker */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+}
+
+.landing-lower-bg {
+    position: relative;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(185, 227, 109, 0.22), transparent 25%),
+        radial-gradient(circle at 88% 72%, rgba(91, 154, 95, 0.14), transparent 28%),
+        linear-gradient(180deg, #F8F6EF 0%, #eef7ea 100%);
+    overflow: hidden;
+}
+
+.landing-lower-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(11, 31, 22, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 31, 22, 0.025) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+    pointer-events: none;
+}
+
+.landing-lower-bg::after {
+    content: "";
+    position: absolute;
+    inset: auto 10% 12% 10%;
+    height: 140px;
+    background: radial-gradient(ellipse at center, rgba(91,154,95,0.12), transparent 70%);
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+/* Feature cards: intentional asymmetry, not identical SaaS cards */
+.feature-card {
+    position: relative;
+    border: 1px solid rgba(27, 33, 29, 0.08);
+    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,246,239,0.9));
+    box-shadow: 0 18px 35px -24px rgba(11,31,22,0.25);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(185,227,109,0.12), transparent 38%, rgba(91,154,95,0.06));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.feature-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(91,154,95,0.38);
+    box-shadow: 0 24px 42px -24px rgba(11,31,22,0.32);
+}
+.feature-card:hover::before {
+    opacity: 1;
+}
+.feature-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Nav link underline-on-hover, not default gray hover */
+.nav-link {
+    position: relative;
+    color: rgba(248, 246, 239, 0.82);
+    padding: 0.35rem 0.15rem;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--lime-200), var(--lime-300));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+.nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(185, 227, 109, 0.3);
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Modal */
+.modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(11, 31, 22, 0.55);
+    backdrop-filter: blur(3px);
+    z-index: 50;
+}
+.modal-card { z-index: 51; }
+
+/* Checklist dot */
+.check-dot {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 9999px;
+    background: var(--moss-500);
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--moss-500);
+    outline-offset: 2px;
+}
+
+/* ========================================================================
+   Dashboard (halaman gabungan 3 fitur)
+   ======================================================================== */
+.dash-tab {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.dash-tab.active {
+    background: var(--forest-950);
+    color: #fff;
+}
+.dash-tab:not(.active) {
+    color: var(--ink-600);
+}
+.dash-tab:not(.active):hover {
+    background: rgba(11, 31, 22, 0.06);
+}
+
+.dash-panel { display: none; }
+.dash-panel.active { display: block; }
+
+/* Emisi chart sizing */
+#emisi-chart { width: 100%; height: 160px; display: block; }

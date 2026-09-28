@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraGreenia - Solusi Digital Hijau</title>
+    <link rel="icon" type="image/png" href="assets/image/logoweb.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main1.css" />
+  </head>
+  <body class="bg-[#F8F6EF]">
+    <!-- ============================== NAVBAR ============================== -->
+    <header class="absolute top-0 left-0 right-0 z-30">
+      <div
+        class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="assets/image/logoweb.png"
+            alt="TerraGreenia"
+            class="w-9 h-9 rounded-full"
+          />
+          <span class="font-display text-xl text-white font-semibold"
+            >TerraGreenia</span
+          >
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#tentang" class="nav-link">Tentang</a>
+          <a href="#fitur" class="nav-link">Fitur</a>
+          <a href="#cta" class="nav-link">Mulai</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============================== HERO ============================== -->
+    <section class="relative bg-[#0B1F16] overflow-hidden min-h-[100vh]">
+      <div class="hero-glow"></div>
+      <div
+        class="max-w-6xl mx-auto px-6 pt-32 pb-20 relative grid md:grid-cols-2 gap-12 items-center min-h-[95vh]"
+      >
+        <div>
+          <h1
+            class="font-display text-white text-4xl sm:text-5xl leading-[1.1] font-semibold"
+          >
+            Kebiasaan kecil hari ini, udara yang lebih bersih besok.
+          </h1>
+          <p class="text-white/70 mt-6 text-base leading-relaxed max-w-md">
+            TerraGreenia membantumu menghitung jejak karbon harian,
+            menyelesaikan misi ramah lingkungan, dan mengumpulkan penghargaan
+            atas setiap langkah baikmu.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <button
+              id="hero-btn-mulai"
+              class="bg-[#5B9A5F] hover:bg-[#3F7D4E] text-white font-semibold px-6 py-3.5 rounded-full transition duration-200"
+            >
+              Mulai Sekarang
+            </button>
+            <a
+              href="#kenapa"
+              class="text-white/85 hover:text-white font-medium text-sm inline-flex items-center gap-2"
+            >
+              Pelajari lebih lanjut
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+          <div class="hero-orb w-56 h-56 sm:w-72 sm:h-72">
+            <img
+              src="assets/image/logoweb.png"
+              alt="Ilustrasi tunas TerraGreenia"
+              class="relative w-full h-full object-cover rounded-full animate-float"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee ticker -->
+      <div
+        class="bg-[#B9E36D] py-3.5 overflow-hidden whitespace-nowrap relative"
+      >
+        <div class="marquee-track">
+          <div
+            class="flex items-center gap-10 pr-10 text-[#0B1F16] font-medium text-sm"
+          >
+            <span>Hitung Emisi</span><span aria-hidden="true">✺</span>
+            <span>Misi Harian</span><span aria-hidden="true">✺</span>
+            <span>Poin & Badge</span><span aria-hidden="true">✺</span>
+            <span>Jejak Karbon</span><span aria-hidden="true">✺</span>
+            <span>Gaya Hidup Hijau</span><span aria-hidden="true">✺</span>
+          </div>
+          <div
+            class="flex items-center gap-10 pr-10 text-[#0B1F16] font-medium text-sm"
+            aria-hidden="true"
+          >
+            <span>Hitung Emisi</span><span>✺</span> <span>Misi Harian</span
+            ><span>✺</span> <span>Poin & Badge</span><span>✺</span>
+            <span>Jejak Karbon</span><span>✺</span> <span>Gaya Hidup Hijau</span
+            ><span>✺</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STACK INFO ============================== -->
+    <section id="kenapa" class="landing-lower-bg py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <p
+              class="text-sm uppercase tracking-[0.18em] text-[#3F7D4E] font-semibold"
+            >
+              Kenapa orang memilih
+            </p>
+            <h2
+              class="font-display text-3xl sm:text-4xl text-[#0B1F16] font-semibold mt-2"
+            >
+              Mulai dari kebiasaan kecil, hasilnya besar.
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_18px_40px_-25px_rgba(11,31,22,0.25)]"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#EAF7DB] flex items-center justify-center text-2xl"
+            >
+              🌿
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-5">
+              Aksi Harian
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed">
+              Mulai dengan langkah mudah seperti membawa botol reusable atau
+              mengurangi konsumsi plastik.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_18px_40px_-25px_rgba(11,31,22,0.25)]"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#EAF7DB] flex items-center justify-center text-2xl"
+            >
+              📉
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-5">
+              Jejak Karbon
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed">
+              Lihat dampak nyata dari aktivitasmu dan cari cara paling efektif
+              untuk mengurangi emisi.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_18px_40px_-25px_rgba(11,31,22,0.25)]"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#EAF7DB] flex items-center justify-center text-2xl"
+            >
+              🎯
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-5">
+              Misi Konsisten
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed">
+              Selesaikan tantangan kecil setiap hari dan bangun kebiasaan yang
+              bertahan lama.
+            </p>
+          </div>
+
+          <div
+            class="bg-[#0B1F16] rounded-3xl p-6 shadow-[0_18px_40px_-25px_rgba(11,31,22,0.5)]"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#B9E36D] flex items-center justify-center text-2xl"
+            >
+              🏆
+            </div>
+            <h3 class="font-display text-xl font-semibold text-white mt-5">
+              Badge & Poin
+            </h3>
+            <p class="text-white/70 text-sm mt-2 leading-relaxed">
+              Raih penghargaan saat kamu konsisten menjaga gaya hidup lebih
+              ramah lingkungan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TENTANG ============================== -->
+    <section id="tentang" class="bg-[#F8F6EF] py-24">
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center"
+      >
+        <div class="relative">
+          <div
+            class="bg-white rounded-3xl border border-black/5 p-8 shadow-[0_20px_50px_-25px_rgba(11,31,22,0.25)]"
+          >
+            <p class="font-display text-5xl text-[#3F7D4E] font-semibold">
+              2.4 kg
+            </p>
+            <p class="text-[#4B554E] text-sm mt-1">
+              rata-rata emisi CO₂ yang dikurangi pengguna TerraGreenia per
+              minggu
+            </p>
+            <div class="h-px bg-black/10 my-6"></div>
+            <div class="flex items-center gap-4">
+              <div class="check-dot">
+                <span class="text-white text-xs">✓</span>
+              </div>
+              <p class="text-sm text-[#1B211D]">
+                Dihitung dari data aktivitas harian nyata, bukan estimasi kasar.
+              </p>
+            </div>
+          </div>
+          <div
+            class="absolute -bottom-6 -right-4 w-24 h-24 rounded-full bg-[#B9E36D]/40 -z-10 hidden sm:block"
+          ></div>
+        </div>
+
+        <div>
+          <h2
+            class="font-display text-3xl sm:text-4xl text-[#0B1F16] font-semibold leading-tight"
+          >
+            Jadi lebih sadar terhadap dampak yang kamu buat, setiap hari.
+          </h2>
+          <p class="text-[#4B554E] mt-5 leading-relaxed max-w-lg">
+            Sebagian besar orang ingin hidup lebih ramah lingkungan, tapi tidak
+            tahu harus mulai dari mana. TerraGreenia mengubah niat baik itu jadi
+            tindakan konkret yang bisa diukur dan dirayakan.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="check-dot mt-0.5">
+                <span class="text-white text-xs">✓</span>
+              </div>
+              <p class="text-[#1B211D] text-sm">
+                Lacak transportasi, listrik, makanan, dan sampahmu dalam satu
+                tempat.
+              </p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="check-dot mt-0.5">
+                <span class="text-white text-xs">✓</span>
+              </div>
+              <p class="text-[#1B211D] text-sm">
+                Selesaikan misi harian kecil yang benar-benar bisa dilakukan.
+              </p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="check-dot mt-0.5">
+                <span class="text-white text-xs">✓</span>
+              </div>
+              <p class="text-[#1B211D] text-sm">
+                Kumpulkan badge yang mencerminkan kebiasaan baikmu, bukan
+                sekadar angka.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FITUR ============================== -->
+    <section id="fitur" class="bg-white py-24 border-t border-black/5">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-xl">
+          <h2
+            class="font-display text-3xl sm:text-4xl text-[#0B1F16] font-semibold"
+          >
+            Tiga cara TerraGreenia menemanimu.
+          </h2>
+          <p class="text-[#4B554E] mt-4 leading-relaxed">
+            Bukan aplikasi yang menuntut sempurna — cukup mulai dari satu
+            kebiasaan, ukur, lalu bangun momentum.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-14">
+          <button
+            data-target="emisi"
+            class="feature-card text-left bg-[#F8F6EF] rounded-3xl p-8 flex flex-col"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#0B1F16] flex items-center justify-center text-2xl"
+            >
+              📊
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-6">
+              Hitung Emisi
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed flex-1">
+              Masukkan aktivitas harianmu dan lihat berapa jejak karbon yang
+              kamu hasilkan, lengkap dengan saran menguranginya.
+            </p>
+            <span
+              class="mt-6 text-sm font-semibold text-[#3F7D4E] inline-flex items-center gap-1.5"
+            >
+              Coba sekarang <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button
+            data-target="misi"
+            class="feature-card text-left bg-[#F8F6EF] rounded-3xl p-8 flex flex-col"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#0B1F16] flex items-center justify-center text-2xl"
+            >
+              🎯
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-6">
+              Misi Harian
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed flex-1">
+              Tantangan kecil dan realistis setiap hari — dari bawa tumbler
+              sampai naik sepeda — yang membangun kebiasaan pelan-pelan.
+            </p>
+            <span
+              class="mt-6 text-sm font-semibold text-[#3F7D4E] inline-flex items-center gap-1.5"
+            >
+              Coba sekarang <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button
+            data-target="poin"
+            class="feature-card text-left bg-[#F8F6EF] rounded-3xl p-8 flex flex-col"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#0B1F16] flex items-center justify-center text-2xl"
+            >
+              🏆
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#0B1F16] mt-6">
+              Poin & Badge
+            </h3>
+            <p class="text-[#4B554E] text-sm mt-2 leading-relaxed flex-1">
+              Setiap misi yang selesai jadi poin, dan poin itu terlihat sebagai
+              badge yang mencerminkan perjalanan hijaumu.
+            </p>
+            <span
+              class="mt-6 text-sm font-semibold text-[#3F7D4E] inline-flex items-center gap-1.5"
+            >
+              Coba sekarang <span aria-hidden="true">→</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CTA ============================== -->
+    <section id="cta" class="bg-[#0B1F16] py-24">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2
+          class="font-display text-3xl sm:text-4xl text-white font-semibold leading-tight"
+        >
+          Mulai dari satu kebiasaan kecil, hari ini.
+        </h2>
+        <p class="text-white/70 mt-4">
+          Gratis, dan langkah pertamamu cuma butuh waktu dua menit.
+        </p>
+        <button
+          id="cta-btn-mulai"
+          class="mt-8 bg-[#B9E36D] hover:bg-white text-[#0B1F16] font-semibold px-7 py-3.5 rounded-full transition duration-200"
+        >
+          Daftar Sekarang
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================== FOOTER ============================== -->
+    <footer class="bg-[#3A2A1E] py-12">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="assets/image/logoweb.png"
+            alt="TerraGreenia"
+            class="w-7 h-7 rounded-full"
+          />
+          <span class="font-display text-white/90 font-medium"
+            >TerraGreenia</span
+          >
+        </div>
+        <p class="text-white/50 text-sm">
+          © 2026 TerraGreenia. Dibuat untuk bumi yang lebih baik.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ============================== MODAL: LOGIN ============================== -->
+    <div id="login-modal" class="hidden">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div
+        class="modal-card fixed inset-0 flex items-center justify-center p-4"
+      >
+        <div
+          class="animate-fade-in bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 relative"
+        >
+          <button
+            data-close-modal
+            class="absolute top-5 right-5 text-[#4B554E] hover:text-[#0B1F16]"
+            aria-label="Tutup"
+          >
+            ✕
+          </button>
+          <h2 class="font-display text-2xl font-semibold text-[#0B1F16] mb-1">
+            Masuk
+          </h2>
+          <p class="text-sm text-[#4B554E] mb-6">
+            Lanjutkan aktivitas hijaumu.
+          </p>
+
+          <form id="login-form" class="space-y-4">
+            <div>
+              <label
+                class="block text-sm font-medium text-[#1B211D] mb-1"
+                for="login-email"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="login-email"
+                required
+                class="w-full p-3 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                placeholder="nama@gmail.com"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#1B211D] mb-1"
+                for="login-password"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="login-password"
+                required
+                class="w-full p-3 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                placeholder="••••••••••"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#5B9A5F] hover:bg-[#3F7D4E] text-white font-semibold py-3 rounded-xl transition duration-200"
+            >
+              Masuk
+            </button>
+          </form>
+
+          <p class="text-center text-sm text-[#4B554E] mt-5">
+            Belum punya akun?
+            <button
+              id="go-to-register"
+              class="text-[#3F7D4E] font-semibold hover:underline"
+            >
+              Daftar akun baru
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== MODAL: REGISTER ============================== -->
+    <div id="register-modal" class="hidden">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div
+        class="modal-card fixed inset-0 flex items-center justify-center p-4"
+      >
+        <div
+          class="animate-fade-in bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 relative"
+        >
+          <button
+            data-close-modal
+            class="absolute top-5 right-5 text-[#4B554E] hover:text-[#0B1F16]"
+            aria-label="Tutup"
+          >
+            ✕
+          </button>
+          <h2 class="font-display text-2xl font-semibold text-[#0B1F16] mb-1">
+            Buat Akun
+          </h2>
+          <p class="text-sm text-[#4B554E] mb-6">
+            Mulai perjalanan hijaumu bersama TerraGreenia.
+          </p>
+
+          <form id="register-form" class="space-y-4">
+            <div>
+              <label
+                class="block text-sm font-medium text-[#1B211D] mb-1"
+                for="reg-name"
+                >Username</label
+              >
+              <input
+                type="text"
+                id="reg-name"
+                required
+                class="w-full p-3 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                placeholder="Username"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#1B211D] mb-1"
+                for="reg-email"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="reg-email"
+                required
+                class="w-full p-3 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                placeholder="Email"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#1B211D] mb-1"
+                for="reg-password"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="reg-password"
+                required
+                class="w-full p-3 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                placeholder="Password"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#5B9A5F] hover:bg-[#3F7D4E] text-white font-semibold py-3 rounded-xl transition duration-200"
+            >
+              Daftar Sekarang
+            </button>
+          </form>
+
+          <p class="text-center text-sm text-[#4B554E] mt-5">
+            Sudah punya akun?
+            <button
+              id="go-to-login"
+              class="text-[#3F7D4E] font-semibold hover:underline"
+            >
+              Masuk di sini
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main1.js"></script>
+  </body>
+</html>

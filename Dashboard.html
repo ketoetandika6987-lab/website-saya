@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraGreenia - Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/image/logoweb.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main1.css" />
+  </head>
+  <body class="bg-[#F8F6EF] min-h-screen relative overflow-x-hidden">
+    <!-- ============================== AMBIENT BACKGROUND GLOWS ============================== -->
+    <div
+      class="fixed inset-0 pointer-events-none -z-10 bg-[#F8F6EF] overflow-hidden"
+      aria-hidden="true"
+    >
+      <div
+        class="absolute inset-0 opacity-[0.08]"
+        style="
+          background-image: radial-gradient(#1b211d 1px, transparent 1px);
+          background-size: 28px 28px;
+        "
+      ></div>
+
+      <!-- Glow hijau muda (Lime) di sudut kanan atas -->
+      <div
+        class="absolute -top-40 -right-20 w-[45rem] h-[45rem] bg-[#B9E36D]/40 rounded-full blur-[120px] mix-blend-multiply"
+      ></div>
+
+      <!-- Glow hijau hutan (Moss) di sisi kiri -->
+      <div
+        class="absolute top-1/4 -left-40 w-[40rem] h-[40rem] bg-[#5B9A5F]/20 rounded-full blur-[120px] mix-blend-multiply"
+      ></div>
+
+      <!-- Glow hijau pekat (Forest) di bagian bawah tengah -->
+      <div
+        class="absolute -bottom-60 right-1/4 w-[50rem] h-[50rem] bg-[#3F7D4E]/15 rounded-full blur-[120px] mix-blend-multiply"
+      ></div>
+    </div>
+
+    <!-- ============================== TOPBAR ============================== -->
+    <header
+      class="bg-[#0B1F16]/95 backdrop-blur-md sticky top-0 z-30 border-b border-white/10"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <img
+            src="assets/image/logoweb.png"
+            alt="TerraGreenia"
+            class="w-8 h-8 rounded-full"
+          />
+          <span class="font-display text-lg text-white font-semibold"
+            >TerraGreenia</span
+          >
+        </a>
+        <a
+          href="index.html"
+          class="text-sm text-white/70 hover:text-white transition"
+          >← Kembali ke Beranda</a
+        >
+      </div>
+    </header>
+
+    <!-- ============================== TAB NAV ============================== -->
+    <div
+      class="bg-white/70 backdrop-blur-md border-b border-black/5 sticky top-[65px] z-20"
+    >
+      <div class="max-w-5xl mx-auto px-6">
+        <nav
+          class="flex gap-2 py-3"
+          role="tablist"
+          aria-label="Fitur TerraGreenia"
+        >
+          <button
+            data-tab="emisi"
+            class="dash-tab active flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold"
+          >
+            <span aria-hidden="true">📊</span> Hitung Emisi
+          </button>
+          <button
+            data-tab="misi"
+            class="dash-tab flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold"
+          >
+            <span aria-hidden="true">🎯</span> Misi Harian
+          </button>
+          <button
+            data-tab="poin"
+            class="dash-tab flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold"
+          >
+            <span aria-hidden="true">🏆</span> Poin & Badge
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ============================== KONTEN ============================== -->
+    <main class="max-w-5xl mx-auto px-6 py-10 relative">
+      <!-- ===== TAB: HITUNG EMISI ===== -->
+      <section id="panel-emisi" class="dash-panel active animate-fade-in">
+        <div class="max-w-xl">
+          <h1 class="font-display text-3xl text-[#0B1F16] font-semibold">
+            Hitung Emisi
+          </h1>
+          <p class="text-[#4B554E] mt-2">
+            Cari tahu jejak karbonmu hari ini, dari empat aktivitas paling umum.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8 md:items-center md:justify-center">
+          <div
+            class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 p-7 shadow-sm"
+          >
+            <form id="emisi-form" class="space-y-4">
+              <div>
+                <label
+                  class="block text-sm font-medium text-[#1B211D] mb-1"
+                  for="transportasi"
+                  >🚗 Jarak berkendara (km/hari)</label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  id="transportasi"
+                  class="w-full p-3 bg-white/90 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                  placeholder="Contoh: 12"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-[#1B211D] mb-1"
+                  for="listrik"
+                  >💡 Pemakaian listrik (kWh/hari)</label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  id="listrik"
+                  class="w-full p-3 bg-white/90 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                  placeholder="Contoh: 5"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-[#1B211D] mb-1"
+                  for="makanan"
+                  >🍖 Konsumsi daging (porsi/hari)</label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  id="makanan"
+                  class="w-full p-3 bg-white/90 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                  placeholder="Contoh: 1"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-[#1B211D] mb-1"
+                  for="sampah"
+                  >🗑️ Sampah dihasilkan (kg/hari)</label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  step="0.1"
+                  id="sampah"
+                  class="w-full p-3 bg-white/90 border border-black/10 rounded-xl focus:ring-2 focus:ring-[#5B9A5F] outline-none"
+                  placeholder="Contoh: 0.5"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-[#5B9A5F] hover:bg-[#3F7D4E] text-white font-semibold py-3 rounded-xl transition duration-200 shadow-sm"
+              >
+                Hitung Sekarang
+              </button>
+            </form>
+          </div>
+
+          <!-------------------Grafik Riwayat Emisi------------------>
+          <div
+            class="mt-6 md:mt-0 bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 p-7 shadow-sm animate-fade-in delay-100"
+          >
+            <div class="flex justify-between items-end mb-6">
+              <div>
+                <h3 class="font-display text-lg font-semibold text-[#0B1F16]">
+                  Riwayat 7 Hari Terakhir
+                </h3>
+                <p class="text-xs text-[#4B554E] mt-1">
+                  Pantau tren jejak karbonmu.
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button
+                  id="export-data-btn"
+                  class="text-xs font-semibold text-[#0B1F16] bg-white/60 px-3 py-1 rounded-full border border-black/5 hover:bg-white"
+                >
+                  Export Data
+                </button>
+                <button
+                  id="reset-data-btn"
+                  class="text-xs font-semibold text-red-600 bg-white/60 px-3 py-1 rounded-full border border-black/5 hover:bg-white"
+                >
+                  Reset Data
+                </button>
+                <span
+                  class="text-xs font-semibold text-[#3F7D4E] bg-[#E6F1E1] px-3 py-1 rounded-full"
+                >
+                  Rata-rata: <span id="rata-emisi">0</span> kg
+                </span>
+              </div>
+            </div>
+
+            <!--------------- Bar Chart Container ------------------->
+            <div
+              class="h-40 flex items-end justify-between gap-2 sm:gap-4 pt-4 border-b border-black/5"
+              id="emisi-chart-container"
+            >
+              <!-------- Bar akan di-generate oleh JS -->
+            </div>
+
+            <!-- X-Axis Labels -->
+            <div
+              class="flex justify-between mt-3 text-[10px] sm:text-xs text-[#4B554E] font-medium"
+              id="emisi-chart-labels"
+            ></div>
+          </div>
+          <div
+            id="hasil-emisi"
+            class="hidden bg-[#0B1F16] rounded-3xl p-7 text-center flex flex-col justify-center shadow-lg"
+          >
+            <p class="text-sm text-white/60 mb-1">
+              Total Emisi Karbonmu Hari Ini
+            </p>
+            <p class="font-display text-5xl text-[#B9E36D] font-semibold">
+              <span id="hasil-angka">0</span>
+            </p>
+            <p class="text-sm text-white/60 mb-4">kg CO₂</p>
+            <p
+              id="hasil-tips"
+              class="text-sm text-white/80 leading-relaxed"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TAB: MISI HARIAN ========================== -->
+      <section id="panel-misi" class="dash-panel">
+        <div class="max-w-xl">
+          <h1 class="font-display text-3xl text-[#0B1F16] font-semibold">
+            Misi Harian
+          </h1>
+          <p class="text-[#4B554E] mt-2">
+            Selesaikan misi kecil, kumpulkan poin.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 p-6 mt-8 max-w-xl shadow-sm"
+        >
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-semibold text-[#1B211D]"
+              >Progres Hari Ini</span
+            >
+            <span id="progress-text" class="text-sm font-bold text-[#3F7D4E]"
+              >0/4 selesai</span
+            >
+          </div>
+          <div class="progress-track w-full h-3">
+            <div
+              id="progress-fill"
+              class="progress-fill"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <div id="misi-list" class="space-y-3 mt-6 max-w-xl">
+          <!-- Item misi digenerate lewat JS -->
+        </div>
+
+        <div class="mt-8 max-w-xl animate-fade-in delay-200">
+          <h2 class="font-display text-xl font-semibold text-[#0B1F16] mb-4">
+            Riwayat Aktivitas
+          </h2>
+          <div
+            class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 p-6 shadow-sm"
+          >
+            <ul id="activity-feed" class="space-y-4">
+              <!-- Feed digenerate lewat JS -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= TAB: POIN & BADGE ======================== -->
+      <section id="panel-poin" class="dash-panel">
+        <div class="max-w-xl">
+          <h1 class="font-display text-3xl text-[#0B1F16] font-semibold">
+            Poin & Badge
+          </h1>
+          <p class="text-[#4B554E] mt-2">Koleksi pencapaianmu sejauh ini.</p>
+        </div>
+
+        <div
+          class="bg-[#0B1F16] rounded-3xl p-8 text-center mt-8 max-w-xl shadow-lg relative overflow-hidden"
+        >
+          <div
+            class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#B9E36D]/15 rounded-full blur-2xl pointer-events-none"
+          ></div>
+          <p class="text-sm text-white/60 mb-1">Total Poin Kamu</p>
+          <p
+            class="font-display text-5xl text-[#B9E36D] font-semibold"
+            id="total-poin"
+          >
+            0
+          </p>
+        </div>
+
+        <div
+          class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 p-6 mt-6 shadow-sm"
+        >
+          <h2 class="font-display text-lg font-semibold text-[#0B1F16] mb-4">
+            Koleksi Badge
+          </h2>
+          <div id="badge-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <!-- Badge digenerate lewat JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
